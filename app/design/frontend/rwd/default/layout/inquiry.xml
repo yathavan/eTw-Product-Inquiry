@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--
+    Product view
+    -->
+    <catalog_product_view>
+        <reference name="product.info">
+            <block type="inquiry/inquiry" name="product.inquiry" as="inquiry" template="inquiry/form/inquiry.phtml" after="reviews">
+                <action method="addToParentGroup">
+                    <group>detailed_info</group>
+                </action>
+                <action method="setTitle" translate="value">
+                    <value>Inquiry</value>
+                </action>
+            </block>
+        </reference>
+    </catalog_product_view>
+</layout>

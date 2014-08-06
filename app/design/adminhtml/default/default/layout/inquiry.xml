@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <inquiry_adminhtml_inquiry_index>
+        <reference name="content">
+            <block type="inquiry/adminhtml_inquiry" name="inquiry" />
+        </reference>
+    </inquiry_adminhtml_inquiry_index>
+</layout>

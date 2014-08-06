@@ -1,0 +1,52 @@
+<div id="inquiry_form">
+    <style type="text/css">
+        #inquiry-form{width: 60%; max-width: 500px;}
+        #inquiry-form label{ width: 100%; max-width: 100px;}
+        #inquiry-form input, #inquiry-form textarea{ margin-bottom: 10px; width: 100%; max-width: 500px; padding: 5px;}
+        #inquiry-form button{float: right;}
+    </style>
+    <div class="page-title">
+        <h4><?php echo $this->__('Inquiry Form') ?></h4>
+    </div>
+    <div class="inquiry_form_wrap" >
+        <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+        <form action="<?php echo Mage::getBaseUrl() . 'inquiry/index/post/'; ?>" method="post" id="inquiry-form">
+            <?php
+            $customer = Mage::getSingleton('customer/session')->getCustomer();
+            $product = Mage::registry('current_product');
+            ?>
+            <input type="hidden" name="sku" value="<?php echo $product->getData('sku'); ?>"  />
+            <input type="hidden" name="customer_id" value="<?php
+            if (!empty($customer)) {
+                echo $customer->getId();
+            }
+            ?>"  />
+            <input type="hidden" name="wcrl" value="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>"  />
+            <div>
+                <label for="product_name">Product</label><br />
+                <input type="text" name="product_name" value="<?php echo $product->getData('name'); ?>" readonly  />
+            </div>
+            <div>
+                <label for="customer_name">Name</label><br />
+                <input type="text" name="customer_name" value="<?php
+            if (!empty($customer)) {
+                echo $customer->getName();
+            }
+            ?>"  />
+            </div>
+            <div>
+                <label for="customer_email">Email</label><br />
+                <input type="text" name="customer_email" value="<?php
+            if (!empty($customer)) {
+                echo $customer->getEmail();
+            }
+            ?>"  />
+            </div>
+            <div>
+                <label for="comment">Questions</label><br />
+                <textarea name="comment" /></textarea>
+            </div>
+            <div><button type="submit" class="button" title="<?php echo $this->__('Send Inquiry') ?>" name="send_inquiry" id="send_inquiry"><span><span><?php echo $this->__('Send Inquiry') ?></span></span></button></div>
+        </form>
+    </div>
+</div>
