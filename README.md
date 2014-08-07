@@ -3,7 +3,7 @@ EWT Product Inquiry
 
 Magento Product Inquiry Extension
 
-This extension enables customers to send inquiry about products.
+As online stores are virtual mostly customers will end up with many questions about products. This extension enables customers to send inquiries about products. And store admin will get notified instantly via email. It will help customers to get their doubts cleared quickly and help store admin to increase sales.
 
 <h2>*Features*</h2>
 <ul>
@@ -32,6 +32,6 @@ This extension come with an email template and an inquiry form. Both are in Engl
 
 If you willing to modify form fields, don't forget to update controllers, model and also database.
 
-<h2>Note<h2>
+<h2>Note</h2>
 
 This inquiry form does not have any configurations. Further enhancements will be added in feature versions.
