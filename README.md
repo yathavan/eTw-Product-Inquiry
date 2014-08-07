@@ -1,4 +1,4 @@
-EWT-Inquiry
+EWT Product Inquiry
 ===========
 
 Magento Product Inquiry Extension
