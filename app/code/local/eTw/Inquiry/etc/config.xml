@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <ETWExtensions_Inquiry>
+        <eTw_Inquiry>
             <version>1.0.0</version>
-        </ETWExtensions_Inquiry>
+        </eTw_Inquiry>
     </modules>
     <frontend>
         <routers>
             <inquiry>
                 <use>standard</use>
                 <args>
-                    <module>ETWExtensions_Inquiry</module>
+                    <module>eTw_Inquiry</module>
                     <frontName>inquiry</frontName>
                 </args>
             </inquiry>
             <inquiry>
                 <args>
                     <modules>
-                        <ETWExtensions_Inquiry before="Mage_Inquiry">ETWExtensions_Inquiry</ETWExtensions_Inquiry>  
+                        <eTw_Inquiry after="Mage_Page">eTw_Inquiry</eTw_Inquiry>  
                     </modules>
                 </args>
             </inquiry> 
@@ -35,7 +35,7 @@
             <inquiry>
                 <use>admin</use>
                 <args>
-                    <module>ETWExtensions_Inquiry</module>
+                    <module>eTw_Inquiry</module>
                     <frontName>inquiry</frontName>
                 </args>
             </inquiry>
@@ -63,10 +63,10 @@
                 </all>
                 <admin>
                     <children>
-                        <ETWExtensions_Inquiry>
+                        <eTw_Inquiry>
                             <title>Inquiry Module</title>
                             <sort_order>10</sort_order>
-                        </ETWExtensions_Inquiry>
+                        </eTw_Inquiry>
                     </children>
                 </admin>
             </resources>
@@ -82,11 +82,11 @@
     <global>
         <models>
             <inquiry>
-                <class>ETWExtensions_Inquiry_Model</class>
+                <class>eTw_Inquiry_Model</class>
                 <resourceModel>inquiry_mysql4</resourceModel>
             </inquiry>
             <inquiry_mysql4>
-                <class>ETWExtensions_Inquiry_Model_Mysql4</class>
+                <class>eTw_Inquiry_Model_Mysql4</class>
                 <entities>
                     <inquiry>
                         <table>etw_inquiries</table>
@@ -97,7 +97,7 @@
         <resources>
             <inquiry_setup>
                 <setup>
-                    <module>ETWExtensions_Inquiry</module>
+                    <module>eTw_Inquiry</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -116,17 +116,17 @@
         </resources>
         <blocks>
             <inquiry>
-                <class>ETWExtensions_Inquiry_Block</class>
+                <class>eTw_Inquiry_Block</class>
             </inquiry>
         </blocks>
         <helpers>
             <inquiry>
-                <class>ETWExtensions_Inquiry_Helper</class>
+                <class>eTw_Inquiry_Helper</class>
             </inquiry>
         </helpers>
         <template>
             <email>
-                <inquiry_notification_admin module="ETWExtensions_Inquiry">
+                <inquiry_notification_admin module="eTw_Inquiry">
                     <label>Inquiry Notification Admin</label>
                     <file>inquiry_notification_admin.html</file>
                     <type>html</type>

@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Model_Inquiry extends Mage_Core_Model_Abstract {
+class eTw_Inquiry_Model_Inquiry extends Mage_Core_Model_Abstract {
 
     public function _construct() {
         parent::_construct();

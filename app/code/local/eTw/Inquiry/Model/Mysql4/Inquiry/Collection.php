@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Model_Mysql4_Inquiry_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract {
+class eTw_Inquiry_Model_Mysql4_Inquiry_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract {
 
     public function _construct() {
         parent::_construct();

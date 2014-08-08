@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Block_Adminhtml_Inquiry_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Tabs {
+class eTw_Inquiry_Block_Adminhtml_Inquiry_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Tabs {
 
     public function __construct() {
         parent::__construct();

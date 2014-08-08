@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_IndexController extends Mage_Core_Controller_Front_Action {
+class eTw_Inquiry_IndexController extends Mage_Core_Controller_Front_Action {
 
     public function indexAction() {
         $this->loadLayout();

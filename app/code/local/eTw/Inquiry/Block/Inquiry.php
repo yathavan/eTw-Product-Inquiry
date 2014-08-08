@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Block_Inquiry extends Mage_Core_Block_Template {
+class eTw_Inquiry_Block_Inquiry extends Mage_Core_Block_Template {
 
     public function _prepareLayout() {
         return parent::_prepareLayout();

@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Block_Adminhtml_Inquiry extends Mage_Adminhtml_Block_Widget_Grid_Container {
+class eTw_Inquiry_Block_Adminhtml_Inquiry extends Mage_Adminhtml_Block_Widget_Grid_Container {
 
     public function __construct() {
         $this->_controller = 'adminhtml_inquiry';

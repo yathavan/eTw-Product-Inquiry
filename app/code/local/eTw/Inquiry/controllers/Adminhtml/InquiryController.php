@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Adminhtml_InquiryController extends Mage_Adminhtml_Controller_Action {
+class eTw_Inquiry_Adminhtml_InquiryController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
         $this->loadLayout()

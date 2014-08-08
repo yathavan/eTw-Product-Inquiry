@@ -1,6 +1,6 @@
 <?php
 
-class ETWExtensions_Inquiry_Model_Status extends Varien_Object {
+class eTw_Inquiry_Model_Status extends Varien_Object {
 
     const STATUS_OPEN = "OPEN";
     const STATUS_HOLD = "HOLD";
