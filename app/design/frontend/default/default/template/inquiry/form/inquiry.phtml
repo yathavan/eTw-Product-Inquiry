@@ -10,7 +10,8 @@
     </div>
     <div class="inquiry_form_wrap" >
         <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
-        <form action="<?php echo Mage::getBaseUrl() . 'inquiry/index/post/'; ?>" method="post" id="inquiry-form">
+        <form action="<?php echo Mage::getBaseUrl() . 'inquiry/index/post/'; ?>" method="post" id="inquiry-form" name="inquiry-form">
+        <?php echo $this->getBlockHtml('formkey'); ?>
             <?php
             $customer = Mage::getSingleton('customer/session')->getCustomer();
             $product = Mage::registry('current_product');
@@ -24,11 +25,11 @@
             <input type="hidden" name="wcrl" value="<?php echo Mage::helper('core/url')->getCurrentUrl(); ?>"  />
             <div>
                 <label for="product_name">Product</label><br />
-                <input type="text" name="product_name" value="<?php echo $product->getData('name'); ?>" readonly  />
+                <input type="text" name="product_name" class="input-text required-entry" value="<?php echo $product->getData('name'); ?>" readonly  />
             </div>
             <div>
                 <label for="customer_name">Name</label><br />
-                <input type="text" name="customer_name" value="<?php
+                <input type="text" name="customer_name" class="input-text required-entry" value="<?php
             if (!empty($customer)) {
                 echo $customer->getName();
             }
@@ -36,7 +37,7 @@
             </div>
             <div>
                 <label for="customer_email">Email</label><br />
-                <input type="text" name="customer_email" value="<?php
+                <input type="text" name="customer_email" class="input-text validate-email required-entry" value="<?php
             if (!empty($customer)) {
                 echo $customer->getEmail();
             }
@@ -50,3 +51,31 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+    //<![CDATA[
+        var inquiryForm = new VarienForm('inquiry-form');
+        inquiryForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        };
+    //]]>
+    </script>
