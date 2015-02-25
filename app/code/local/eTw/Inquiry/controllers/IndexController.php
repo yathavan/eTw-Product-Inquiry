@@ -21,9 +21,9 @@ class eTw_Inquiry_IndexController extends Mage_Core_Controller_Front_Action {
             $message = 'Please enter a valid email address.';
             Mage::getSingleton('core/session')->addError(Mage::helper('inquiry')->__($message));
         }
-        $wbrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); 
-        $wcrl = str_ireplace($wbrl,"",$post['wcrl']);
-        $this->_redirect($wcrl);
+        //$wbrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); 
+        //$wcrl = str_ireplace($wbrl,"",$post['wcrl']);
+        $this->_redirect($post['wcrl']);
     }
 
     private function notifyAdmin($post) {
